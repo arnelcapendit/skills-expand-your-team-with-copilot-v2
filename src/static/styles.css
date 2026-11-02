@@ -1,19 +1,19 @@
 /* Color palette */
 :root {
   /* Primary colors */
-  --primary: #1a237e;
-  --primary-light: #534bae;
-  --primary-dark: #000051;
+  --primary: #4d7c0f;
+  --primary-light: #65a30d;
+  --primary-dark: #365314;
   --primary-text: #ffffff;
 
   /* Secondary colors */
-  --secondary: #ff6f00;
-  --secondary-light: #ffa040;
-  --secondary-dark: #c43e00;
-  --secondary-text: #ffffff;
+  --secondary: #a3e635;
+  --secondary-light: #d9f99d;
+  --secondary-dark: #65a30d;
+  --secondary-text: #1a2e05;
 
   /* Neutral colors */
-  --background: #f5f5f5;
+  --background: #fbfef6;
   --surface: #ffffff;
   --text-primary: #333333;
   --text-secondary: #666666;
@@ -28,8 +28,8 @@
   --warning-light: #fff3cd;
   --error: #c62828;
   --error-light: #ffebee;
-  --info: #0c5460;
-  --info-light: #d1ecf1;
+  --info: #365314;
+  --info-light: #ecfccb;
 }
 
 * {
@@ -50,12 +50,60 @@ body {
   font-size: 0.9rem;
 }
 
+body > :not(.branch-background) {
+  position: relative;
+  z-index: 1;
+}
+
+.branch-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.branch-background svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+}
+
+.branch-lines {
+  stroke: var(--primary-light);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 8 14;
+  opacity: 0.36;
+  animation: branch-flow 24s linear infinite;
+}
+
+.branch-nodes {
+  fill: var(--secondary-dark);
+  opacity: 0.32;
+  animation: branch-pulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes branch-flow {
+  to {
+    stroke-dashoffset: -176;
+  }
+}
+
+@keyframes branch-pulse {
+  to {
+    opacity: 0.5;
+  }
+}
+
 header {
   text-align: center;
   padding: 12px 0;
   margin-bottom: 15px;
-  background-color: var(--primary);
-  color: var(--primary-text);
+  background-color: rgba(255, 255, 255, 0.92);
+  color: var(--primary-dark);
+  border-top: 5px solid var(--secondary);
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   position: relative;
@@ -73,6 +121,23 @@ header h2 {
   font-size: 1.2rem;
 }
 
+.mascot-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.mascot-gallery img {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: var(--surface);
+  border: 2px solid var(--secondary);
+}
+
 main {
   display: flex;
   flex-wrap: wrap;
@@ -80,7 +145,7 @@ main {
 }
 
 section {
-  background-color: var(--surface);
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 15px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -104,7 +169,7 @@ section h3 {
 
 .sidebar-filters {
   padding: 15px;
-  background-color: var(--surface);
+  background-color: rgba(255, 255, 255, 0.88);
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -195,8 +260,8 @@ section h3 {
   position: absolute;
   top: 8px;
   right: 8px;
-  background: #e8eaf6;
-  color: #3949ab;
+  background: #ecfccb;
+  color: #365314;
   font-size: 0.65rem;
   font-weight: bold;
   padding: 2px 6px;
@@ -276,7 +341,7 @@ section h3 {
   width: 100%;
   font-weight: bold;
   border-radius: 20px;
-  box-shadow: 0 2px 4px rgba(255, 111, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(101, 163, 13, 0.2);
   transition: all 0.3s ease;
   display: flex;
   justify-content: center;
@@ -497,7 +562,7 @@ footer {
 .search-box input:focus {
   outline: none;
   border-color: var(--primary-light);
-  box-shadow: 0 0 0 2px rgba(83, 75, 174, 0.1);
+  box-shadow: 0 0 0 2px rgba(101, 163, 13, 0.1);
 }
 
 .search-box button {
@@ -609,6 +674,18 @@ footer {
 
   .sidebar-filters {
     width: 100%;
+  }
+
+  .mascot-gallery img {
+    width: 54px;
+    height: 54px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .branch-lines,
+  .branch-nodes {
+    animation: none;
   }
 }
 
