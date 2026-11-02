@@ -122,12 +122,12 @@ initial_activities = {
     },
     "Manga Maniacs": {
         "description": "Dive into epic adventures, unforgettable heroes, and wild worlds as we explore Japanese manga—one page-turning story at a time!",
-        "schedule": "Tuesdays, 7:00 PM",
+        "schedule": "Tuesdays, 5:00 PM",
         "schedule_details": {
             "days": ["Tuesday"],
-            "start_time": "19:00"
+            "start_time": "17:00"
         },
-        "max_participants": 15,
+        "max_participants": 25,
         "participants": []
     },
     "Debate Team": {
@@ -196,4 +196,3 @@ initial_teachers = [
         "role": "admin"
     }
 ]
-
