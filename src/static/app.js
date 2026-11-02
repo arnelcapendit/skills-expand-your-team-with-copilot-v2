@@ -27,11 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Activity categories with corresponding colors
   const activityTypes = {
-    sports: { label: "Sports", color: "#e8f5e9", textColor: "#2e7d32" },
-    arts: { label: "Arts", color: "#f3e5f5", textColor: "#7b1fa2" },
-    academic: { label: "Academic", color: "#e3f2fd", textColor: "#1565c0" },
-    community: { label: "Community", color: "#fff3e0", textColor: "#e65100" },
-    technology: { label: "Technology", color: "#e8eaf6", textColor: "#3949ab" },
+    sports: { label: "Sports", color: "#ecfccb", textColor: "#365314" },
+    arts: { label: "Arts", color: "#f0fdf4", textColor: "#166534" },
+    academic: { label: "Academic", color: "#f7fee7", textColor: "#3f6212" },
+    community: { label: "Community", color: "#dcfce7", textColor: "#166534" },
+    technology: { label: "Technology", color: "#d9f99d", textColor: "#365314" },
   };
 
   // State for activities and filters

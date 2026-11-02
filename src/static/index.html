@@ -7,9 +7,50 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="branch-background" aria-hidden="true">
+      <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+        <g class="branch-lines">
+          <path d="M80 0v180l90 90v180l-90 90v360" />
+          <path d="M80 180h150l90 90v180l100 100v350" />
+          <path d="M320 270h180l90-90h170v-180" />
+          <path d="M570 180v180l120 120v180l-80 80v160" />
+          <path d="M840 0v150l-80 80v180l100 100v390" />
+          <path d="M760 230h220l100 100v180l120 120v270" />
+          <path d="M1060 330h180l100-100h100" />
+          <path d="M1180 610h-190l-90 90v200" />
+          <path d="M1300 230v-130l-100-100" />
+          <path d="M570 540h190l100 100h130" />
+        </g>
+        <g class="branch-nodes">
+          <circle cx="80" cy="180" r="5" />
+          <circle cx="320" cy="270" r="5" />
+          <circle cx="570" cy="180" r="5" />
+          <circle cx="840" cy="150" r="5" />
+          <circle cx="1060" cy="330" r="5" />
+          <circle cx="1180" cy="610" r="5" />
+        </g>
+      </svg>
+    </div>
     <header>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
+      <div class="mascot-gallery" role="group" aria-label="Our Octodex mascots">
+        <img
+          src="https://octodex.github.com/images/Professortocat_v2.png"
+          alt="Professortocat"
+          loading="lazy"
+        />
+        <img
+          src="https://octodex.github.com/images/nyantocat.gif"
+          alt="Nyantocat"
+          loading="lazy"
+        />
+        <img
+          src="https://octodex.github.com/images/octobiwan.jpg"
+          alt="Octobiwan"
+          loading="lazy"
+        />
+      </div>
       <div id="user-controls">
         <div id="user-status">
           <button id="login-button" class="icon-button">
