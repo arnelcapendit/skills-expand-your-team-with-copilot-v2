@@ -1,8 +1,10 @@
 name: Step 2
 
 on:
-  pull_request_review:
-    types: [submitted]
+  pull_request:
+    branches:
+      - main
+    types: [closed]
 
 permissions:
   contents: read
@@ -14,6 +16,7 @@ env:
 
 jobs:
   find_exercise:
+    if: github.event.pull_request.merged == true
     name: Find Exercise Issue
     uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.9.1
 
